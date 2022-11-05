@@ -169,13 +169,14 @@ var_dump($heroSection);
                 <div class="col-3">
                     <i class="fa fa-quote-left"></i>
                     <p><?=$review->testimonial?></p>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
+                    <div class="rating" data-stars="5">
+                <?php for($i=1; $i <=$review->stars; $i++){?>
+                    <i class="fa fa-star"></i>
+                <?php } ?>
+                <?php for($i=1; $i <=(5-$review->stars); $i++){?>
+                    <i class="fa fa-star-o"></i>
+                <?php } ?>
+                </div>
                     <img src=<?=$review->picture?>>
                     <h3><?=$review->name?></h3>
                 </div>
